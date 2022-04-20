@@ -2,11 +2,11 @@
     #include<stdio.h>
     int integer=0, floating=0;
 %}
-sign [-+];
+sign [-];
 digit [0-9];
 %%
-[{sign}]{0,1}[{digit}]+ {printf("Integer\n"); integer++;}
-[{sign}]{0,1}[{digit}]*[.][{digit}]+ {printf("Floating\n"); floating++;}
+({sign})?({digit})+ {printf("%s is Integer\n",yytext); integer++;}
+({sign})?({digit})*[.]({digit})+ {printf("%s is Floating\n",yytext); floating++;}
 .* {printf("Invalid\n");}
 %%
 
