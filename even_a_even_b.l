@@ -1,7 +1,7 @@
 %{
 	#include<stdio.h>
 %}
-rex ((aa|bb)|(a(bb)*a)|b(aa)*b|(ab|ba)(aa|bb)*(ba|ab))*
+rex ((aa|bb)|(ab|ba)(aa|bb)*(ba|ab))*
 %%
 {rex} printf("Accepted\n");
 .* printf("Not Accepted\n");
